@@ -1,0 +1,1476 @@
+/* ========================================
+   AyuraWell - Responsive Stylesheet
+   Mobile-First Responsive Design
+   ======================================== */
+
+/* ========== Large Devices (Desktops, 1200px and up) ========== */
+@media (max-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+
+  h1 {
+    font-size: 2.75rem;
+  }
+
+  h2 {
+    font-size: 2.25rem;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+}
+
+/* ========== Tablet Standard (Landscape 1024px) ========== */
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: 2.5rem;
+    /* Slightly smaller for 1024px screens */
+  }
+
+  .hero-content {
+    /* Ensure padding doesn't push content too far if valid */
+    padding-right: 1rem;
+  }
+}
+
+/* ========== Tablet Devices (768px - 1024px) ========== */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  /* Navigation - Prevent overlap with logo */
+  .navbar {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .logo {
+    flex-shrink: 0;
+    margin-right: auto;
+    z-index: 1001;
+    max-width: 180px;
+    min-width: 0;
+  }
+
+  .logo-img {
+    height: 40px !important;
+    max-height: 40px !important;
+    width: auto;
+    max-width: 100%;
+  }
+
+  .logo img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Force hamburger menu on tablet to prevent overlap */
+  .nav-toggle {
+    display: flex !important;
+    order: 2;
+    margin-left: auto;
+    z-index: 1001;
+  }
+
+  .nav-menu {
+    position: fixed !important;
+    top: 70px;
+    right: -100%;
+    width: 300px;
+    height: calc(100vh - 70px);
+    background: var(--bg-primary);
+    flex-direction: column !important;
+    padding: 0 !important;
+    gap: 0 !important;
+    align-items: flex-start !important;
+    box-shadow: var(--shadow-lg);
+    transition: right 0.3s ease;
+    overflow-y: auto;
+    z-index: 1000;
+    flex-wrap: nowrap !important;
+  }
+
+  .nav-menu.active {
+    right: 0;
+  }
+
+  .nav-menu li {
+    width: 100%;
+    border-bottom: 1px solid rgba(184, 122, 59, 0.2);
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin: 0 !important;
+  }
+
+  .nav-menu li:first-child {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  .nav-menu li a {
+    display: block;
+    padding: 1rem 0;
+    width: 100%;
+    text-align: left;
+    color: var(--text-color);
+    margin: 0;
+  }
+
+  .nav-menu li a.btn {
+    width: 100%;
+    text-align: center;
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .nav-menu li a.btn i {
+    display: inline-block;
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  /* Dropdown Menu Tablet Styles */
+  .nav-menu li.dropdown {
+    width: 100%;
+  }
+
+  .nav-menu li.dropdown>a {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .nav-menu li .dropdown-menu {
+    position: static !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    box-shadow: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    display: none;
+    width: 100%;
+    z-index: auto;
+  }
+
+  .nav-menu li.dropdown.active .dropdown-menu {
+    display: block !important;
+    padding-left: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .nav-menu li .dropdown-menu li a {
+    padding: 0.75rem 0;
+    color: var(--text-color);
+  }
+
+  .nav-menu li .dropdown-menu li a:hover,
+  .nav-menu li .dropdown-menu li a.active {
+    padding-left: 0;
+    background: transparent;
+    color: var(--primary-color);
+  }
+
+  .hero-buttons .hero-cta-btn {
+    width: 100%;
+    max-width: 300px;
+    padding: 0.9rem 2rem;
+    font-size: 1rem;
+  }
+
+  /* Footer contact icons beside text in tablet view */
+  .footer-contact li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    flex-direction: row;
+  }
+
+  .footer-contact i {
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+
+  .footer-contact span {
+    display: inline-block;
+    line-height: 1.6;
+    flex: 1;
+  }
+
+  /* Center align page hero heading in tablet view */
+  .page-hero h1 {
+    text-align: center !important;
+  }
+
+  .page-hero .text-center {
+    text-align: center !important;
+  }
+
+  /* Services page - center align headings and content in tablet view */
+  #ayurveda h2,
+  #panchakarma h2,
+  #yoga h2,
+  #physiotherapy h2,
+  #nutrition h2,
+  #spa h2 {
+    text-align: center !important;
+  }
+
+  #ayurveda .section-subtitle,
+  #panchakarma .section-subtitle,
+  #yoga .section-subtitle,
+  #physiotherapy .section-subtitle,
+  #nutrition .section-subtitle,
+  #spa .section-subtitle {
+    text-align: center !important;
+  }
+
+  #ayurveda .col-lg-6,
+  #panchakarma .col-lg-6,
+  #yoga .col-lg-6,
+  #physiotherapy .col-lg-6,
+  #nutrition .col-lg-6,
+  #spa .col-lg-6 {
+    text-align: center;
+  }
+
+  #ayurveda p,
+  #panchakarma p,
+  #yoga p,
+  #physiotherapy p,
+  #nutrition p,
+  #spa p {
+    text-align: center;
+  }
+
+  #ayurveda ul,
+  #panchakarma ul,
+  #yoga ul,
+  #physiotherapy ul,
+  #nutrition ul,
+  #spa ul {
+    text-align: left;
+    display: inline-block;
+  }
+
+  /* Fix doctor cards alignment in tablet view */
+  .doctor-card {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+  }
+
+  /* Center and fit all cards in tablet view */
+  .container {
+    max-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .row {
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .service-card,
+  .doctor-card,
+  .testimonial-card {
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+
+  /* Ensure columns don't overflow */
+  [class*="col-"] {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Features section cards - 2 columns on tablet */
+  .col-md-3.col-sm-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  /* Services section cards - 2 columns on tablet */
+  .col-6.col-md-3 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  .col-lg-4.col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  /* Doctor cards - 2 columns on tablet */
+  .col-lg-3.col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+/* ========== Medium Devices (Tablets, 992px and up) ========== */
+@media (max-width: 992px) {
+  .container {
+    max-width: 100%;
+    padding: 0 20px;
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+    text-align: center;
+  }
+
+  .section-title {
+    text-align: center;
+  }
+
+  .section-title h2 {
+    text-align: center;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 100px 0 60px;
+    text-align: center;
+  }
+
+  .hero-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .hero-buttons .hero-cta-btn {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    padding: 0.9rem 2rem;
+    font-size: 1rem;
+  }
+
+  /* Navigation - Tablet Menu */
+  .logo {
+    flex-shrink: 0;
+    margin-right: auto;
+    z-index: 1001;
+  }
+
+  .logo-img {
+    height: 40px !important;
+    max-height: 40px !important;
+  }
+
+  .nav-toggle {
+    display: flex;
+    order: 2;
+    margin-left: auto;
+    z-index: 1001;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    width: 300px;
+    height: calc(100vh - 70px);
+    background: var(--bg-primary);
+    flex-direction: column;
+    padding: 0 !important;
+    margin: 0 !important;
+    gap: 0;
+    align-items: flex-start;
+    box-shadow: var(--shadow-lg);
+    transition: right 0.3s ease;
+    overflow-y: auto;
+    z-index: 1000;
+  }
+
+  .nav-menu.active {
+    right: 0;
+  }
+
+  .nav-menu li {
+    width: 100%;
+    border-bottom: 1px solid rgba(184, 122, 59, 0.2);
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin: 0 !important;
+  }
+
+  .nav-menu li:first-child {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+    border-top: none;
+  }
+
+  .nav-menu li a {
+    display: block;
+    padding: 1rem 0;
+    width: 100%;
+    text-align: left;
+    color: var(--text-color);
+  }
+
+  .nav-menu li a:hover,
+  .nav-menu li a.active {
+    color: var(--primary-color);
+  }
+
+  .nav-menu .theme-toggle-wrapper {
+    width: 100%;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(184, 122, 59, 0.2);
+  }
+
+  .nav-menu .theme-toggle {
+    width: 45px;
+    height: 45px;
+    background: rgba(184, 122, 59, 0.1);
+    border-color: rgba(184, 122, 59, 0.3);
+    color: var(--primary-color);
+  }
+
+  .nav-menu li a.btn {
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+  }
+
+  /* Footer contact icons beside text in tablet view */
+  .footer-contact li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .footer-contact i {
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+
+  .footer-contact span {
+    display: inline-block;
+    line-height: 1.6;
+    flex: 1;
+  }
+
+  /* Center align page hero heading in tablet view */
+  .page-hero h1 {
+    text-align: center !important;
+  }
+
+  .page-hero .text-center {
+    text-align: center !important;
+  }
+
+  /* Departments page - fix card content in tablet view */
+  .service-card {
+    overflow: visible !important;
+    height: auto !important;
+  }
+
+  .service-card h3 {
+    white-space: normal !important;
+  }
+
+  /* Blog page - center align Read More buttons in tablet view */
+  .blog-card .btn-secondary {
+    align-self: center;
+    margin-top: 1rem;
+  }
+
+  /* Contact page - center align headings in tablet view */
+  .contact-form h3 {
+    text-align: center !important;
+  }
+
+  /* Appointments page - center align headings in tablet view */
+  .contact-form h5,
+  #appointment-form h5 {
+    text-align: center !important;
+  }
+
+  /* Fix wrapping issues in tablet view */
+  .col-lg-3,
+  .col-lg-4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .col-md-3,
+  .col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  /* Center all content */
+  .row {
+    justify-content: center;
+  }
+
+  .service-card,
+  .doctor-card,
+  .pricing-card,
+  .testimonial-card {
+    text-align: center;
+  }
+}
+
+/* ========== Small Devices (Landscape phones, 768px and up) ========== */
+@media (max-width: 768px) {
+  .container {
+    max-width: 100%;
+    padding: 0 15px;
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+    text-align: center;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  h4 {
+    font-size: 1.25rem;
+    text-align: center;
+  }
+
+  .section {
+    padding: var(--spacing-lg) 0;
+  }
+
+  .section-title {
+    text-align: center;
+  }
+
+  .section-title h2 {
+    text-align: center;
+  }
+
+  /* Navigation - Mobile Menu */
+  .nav-toggle {
+    display: flex;
+    order: 2;
+    margin-left: auto;
+  }
+
+
+  .nav-menu {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    width: 280px;
+    max-width: 85%;
+    height: calc(100vh - 70px);
+    background: var(--bg-primary);
+    flex-direction: column;
+    padding: 0 !important;
+    margin: 0 !important;
+    gap: 0;
+    align-items: flex-start;
+    box-shadow: var(--shadow-lg);
+    transition: right 0.3s ease;
+    overflow-y: auto;
+    z-index: 1000;
+  }
+
+  .nav-menu li {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    width: 100%;
+    border-bottom: 1px solid rgba(184, 122, 59, 0.2);
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin: 0 !important;
+  }
+
+  .nav-menu li:first-child {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  .nav-menu.active {
+    right: 0;
+  }
+
+  /* Mobile menu backdrop */
+  body.menu-open::before {
+    content: '';
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    backdrop-filter: blur(2px);
+  }
+
+  .nav-menu li a {
+    display: block;
+    padding: 1rem 0;
+    width: 100%;
+    text-align: left;
+    color: var(--text-color);
+  }
+
+  .nav-menu li a:hover,
+  .nav-menu li a.active {
+    color: var(--primary-color);
+  }
+
+  .nav-menu li a.btn {
+    width: 100%;
+    text-align: center;
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .nav-menu li a.btn i {
+    display: inline-block;
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  /* Dropdown Menu Mobile Styles */
+  .nav-menu li.dropdown {
+    width: 100%;
+  }
+
+  .nav-menu li.dropdown>a {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .nav-menu li .dropdown-menu {
+    position: static !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    box-shadow: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    display: none;
+    width: 100%;
+    z-index: auto;
+  }
+
+  .nav-menu li.dropdown.active .dropdown-menu {
+    display: block !important;
+    padding-left: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .nav-menu li .dropdown-menu li a {
+    padding: 0.75rem 0;
+    color: var(--text-color);
+  }
+
+  .nav-menu li .dropdown-menu li a:hover,
+  .nav-menu li .dropdown-menu li a.active {
+    padding-left: 0;
+    background: transparent;
+    color: var(--primary-color);
+  }
+
+  .nav-menu .theme-toggle-wrapper {
+    width: 100%;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(184, 122, 59, 0.2);
+  }
+
+  .nav-menu .theme-toggle {
+    width: 45px;
+    height: 45px;
+    background: rgba(184, 122, 59, 0.1);
+    border-color: rgba(184, 122, 59, 0.3);
+    color: var(--primary-color);
+  }
+
+  .nav-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
+
+  /* Hero Section */
+  .hero {
+    text-align: center;
+    padding: 100px 0 40px;
+  }
+
+  .hero-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-buttons .hero-cta-btn {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+    padding: 0.85rem 1.75rem;
+    font-size: 0.95rem;
+  }
+
+  /* Service Cards */
+  .service-card {
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  /* Doctor Cards */
+  .doctor-card {
+    margin-bottom: 2rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+  }
+
+  /* Fix Our Leadership Team cards alignment in mobile - force 1 card per row */
+  .row .col-12 .doctor-card,
+  .row .doctor-card {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Ensure columns take full width on mobile */
+  @media (max-width: 767px) {
+
+    .row .col-md-6,
+    .row .col-lg-4 {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+
+  /* Services page - center align headings and content */
+  #ayurveda h2,
+  #panchakarma h2,
+  #yoga h2,
+  #physiotherapy h2,
+  #nutrition h2,
+  #spa h2 {
+    text-align: center !important;
+  }
+
+  #ayurveda .section-subtitle,
+  #panchakarma .section-subtitle,
+  #yoga .section-subtitle,
+  #physiotherapy .section-subtitle,
+  #nutrition .section-subtitle,
+  #spa .section-subtitle {
+    text-align: center !important;
+  }
+
+  #ayurveda .col-lg-6,
+  #panchakarma .col-lg-6,
+  #yoga .col-lg-6,
+  #physiotherapy .col-lg-6,
+  #nutrition .col-lg-6,
+  #spa .col-lg-6 {
+    text-align: center;
+  }
+
+  #ayurveda p,
+  #panchakarma p,
+  #yoga p,
+  #physiotherapy p,
+  #nutrition p,
+  #spa p {
+    text-align: center;
+  }
+
+  #ayurveda ul,
+  #panchakarma ul,
+  #yoga ul,
+  #physiotherapy ul,
+  #nutrition ul,
+  #spa ul {
+    text-align: left;
+    display: inline-block;
+  }
+
+  /* Departments page - fix card content alignment and visibility in mobile */
+  .service-card {
+    overflow: visible !important;
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+  }
+
+  .service-card p,
+  .service-card ul,
+  .service-card h3 {
+    overflow: visible !important;
+    text-overflow: clip !important;
+    white-space: normal !important;
+    word-wrap: break-word;
+  }
+
+  .service-card h3 {
+    white-space: normal !important;
+  }
+
+  /* Blog page - center align Read More buttons and fix card stretching */
+  .blog-card {
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .blog-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 1.5rem;
+  }
+
+  .blog-card .btn-secondary {
+    margin-top: auto;
+    align-self: center;
+    width: auto;
+    min-width: 120px;
+    text-align: center;
+  }
+
+  /* Contact page - center align headings */
+  .contact-form h3 {
+    text-align: center !important;
+  }
+
+  /* Appointments page - center align headings */
+  .contact-form h5,
+  #appointment-form h5 {
+    text-align: center !important;
+  }
+
+  /* Herbal remedies page - center align hero heading */
+  .page-hero h1 {
+    text-align: center !important;
+  }
+
+  .page-hero .text-center {
+    text-align: center !important;
+  }
+
+  /* Pricing Cards */
+  .pricing-card {
+    margin-bottom: 2rem;
+    text-align: center;
+    min-height: auto;
+    height: auto;
+  }
+
+  .pricing-price {
+    font-size: 2.5rem;
+  }
+
+  .pricing-features {
+    min-height: auto;
+  }
+
+  /* Testimonials */
+  .testimonial-card {
+    margin: 0.5rem;
+    text-align: center;
+  }
+
+  /* Gallery */
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+
+  .gallery-item {
+    height: 220px;
+  }
+
+  /* Footer */
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .footer-section {
+    text-align: center;
+  }
+
+  /* Center align page hero heading in mobile view */
+  .page-hero h1 {
+    text-align: center !important;
+  }
+
+  .page-hero .text-center {
+    text-align: center !important;
+  }
+
+  .footer {
+    padding: var(--spacing-md) 0 var(--spacing-sm);
+  }
+
+  /* Contact Form */
+  .contact-form {
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  /* Center all rows and columns */
+  .row {
+    justify-content: center;
+    text-align: center;
+  }
+
+  [class*="col-"] {
+    text-align: center;
+  }
+
+  /* Back to Top */
+  .back-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    font-size: 1.25rem;
+  }
+}
+
+/* ========== Extra Small Devices (Portrait phones, 576px and down) ========== */
+@media (max-width: 576px) {
+  .container {
+    max-width: 100%;
+    padding: 0 15px;
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    text-align: center;
+  }
+
+  h4 {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  body {
+    font-size: 15px;
+  }
+
+  .section {
+    padding: 2rem 0;
+  }
+
+  .section-title {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .section-title h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  /* Header */
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .logo-img {
+    height: 40px;
+  }
+
+  .navbar {
+    padding: 0.75rem 0;
+  }
+
+  .nav-toggle {
+    display: flex;
+    order: 2;
+    margin-left: auto;
+  }
+
+  .nav-menu {
+    width: 260px;
+    max-width: 90%;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .nav-menu li {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin: 0 !important;
+  }
+
+  .nav-menu li:first-child {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+    border-top: none;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 80px 0 40px;
+    min-height: auto;
+    text-align: center;
+  }
+
+  .hero-content {
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero h1 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+  .hero-image {
+    margin-top: 2rem;
+  }
+
+  .hero-buttons .hero-cta-btn {
+    max-width: 100%;
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  /* Buttons */
+  .btn {
+    padding: 0.65rem 1.5rem;
+    font-size: 0.95rem;
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+  }
+
+  /* Departments page - fix card content visibility in mobile */
+  .service-card {
+    overflow: visible !important;
+    height: auto !important;
+    min-height: auto !important;
+  }
+
+  .service-card h3 {
+    white-space: normal !important;
+    word-wrap: break-word;
+  }
+
+  /* Blog page - center align Read More buttons and fix card stretching */
+  .blog-card {
+    height: auto !important;
+    min-height: auto !important;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .blog-card .btn-secondary {
+    align-self: center;
+    margin-top: 1rem;
+    width: auto;
+    min-width: 120px;
+  }
+
+  /* Contact page - center align headings */
+  .contact-form h3 {
+    text-align: center !important;
+  }
+
+  /* Appointments page - center align headings */
+  .contact-form h5,
+  #appointment-form h5 {
+    text-align: center !important;
+  }
+
+  /* Herbal remedies page - center align hero heading */
+  .page-hero h1 {
+    text-align: center !important;
+  }
+
+  .page-hero .text-center {
+    text-align: center !important;
+  }
+
+  /* Service Cards */
+  .service-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 2rem;
+    margin: 0 auto;
+  }
+
+  .service-card {
+    padding: 1.5rem;
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+
+  .service-card h3 {
+    font-size: 1.25rem;
+    text-align: center;
+  }
+
+  /* Center all content */
+  .row {
+    justify-content: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+
+  [class*="col-"] {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Force all columns to full width on small mobile */
+  .col-md-3.col-sm-6,
+  .col-sm-6,
+  .col-6.col-md-3,
+  .col-lg-4.col-md-6,
+  .col-md-6,
+  .col-lg-3.col-md-6 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* Center all cards */
+  .service-card,
+  .doctor-card,
+  .testimonial-card {
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Doctor Cards */
+  .doctor-image {
+    height: 250px;
+  }
+
+  .doctor-info {
+    padding: 1rem;
+  }
+
+  .doctor-social {
+    gap: 0.5rem;
+    padding: 0.75rem;
+  }
+
+  .doctor-social a {
+    width: 35px;
+    height: 35px;
+    font-size: 0.9rem;
+  }
+
+  /* Pricing */
+  .pricing-card {
+    padding: 1.5rem;
+  }
+
+  .pricing-price {
+    font-size: 2rem;
+  }
+
+  .pricing-price span {
+    font-size: 1.25rem;
+  }
+
+  /* Testimonials */
+  .testimonial-card {
+    padding: 1.5rem;
+  }
+
+  .testimonial-text {
+    font-size: 1rem;
+  }
+
+  .testimonial-avatar {
+    width: 50px;
+    height: 50px;
+  }
+
+  .testimonial-quote {
+    font-size: 2rem;
+  }
+
+  /* Gallery */
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .gallery-item {
+    height: 200px;
+  }
+
+  /* Contact Form */
+  .contact-form {
+    padding: 1.25rem;
+  }
+
+  .form-control {
+    padding: 0.65rem 0.85rem;
+    font-size: 0.95rem;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 2rem 0 1rem;
+  }
+
+  .footer-section h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+
+  .footer-section p,
+  .footer-section a {
+    font-size: 0.9rem;
+  }
+
+  .social-links a {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+
+  .footer-bottom {
+    font-size: 0.85rem;
+    padding-top: 1.5rem;
+  }
+
+  /* Back to Top */
+  .back-to-top {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+    bottom: 15px;
+    right: 15px;
+  }
+}
+
+/* ========== Extra Small Devices (320px and down) ========== */
+@media (max-width: 320px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .logo {
+    font-size: 1.25rem;
+  }
+
+  .btn {
+    padding: 0.6rem 1.25rem;
+    font-size: 0.9rem;
+  }
+
+  .service-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.75rem;
+  }
+
+  .pricing-price {
+    font-size: 1.75rem;
+  }
+}
+
+/* ========== Print Styles ========== */
+@media print {
+
+  .header,
+  .nav-toggle,
+  .back-to-top,
+  .preloader,
+  .footer {
+    display: none;
+  }
+
+  .section {
+    page-break-inside: avoid;
+  }
+
+  a {
+    color: #000;
+    text-decoration: underline;
+  }
+
+  body {
+    font-size: 12pt;
+    color: #000;
+    background: #fff;
+  }
+}
+
+/* ========== Landscape Orientation ========== */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero {
+    min-height: auto;
+    padding: 100px 0 40px;
+  }
+
+  .nav-menu {
+    height: calc(100vh - 60px);
+  }
+}
+
+/* ========== High Resolution Displays ========== */
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+
+  /* Optimize images for retina displays */
+  .service-icon,
+  .doctor-social a,
+  .social-links a {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}

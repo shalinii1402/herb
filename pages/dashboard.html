@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - PranaLeaf Ayurveda</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32"
+    href="https://www.pngitem.com/pimgs/m/333-3335536_ayurveda-icon-hd-png-download.png">
+  <link rel="apple-touch-icon" href="https://www.pngitem.com/pimgs/m/333-3335536_ayurveda-icon-hd-png-download.png">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <link rel="stylesheet" href="../assets/css/dark.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      width: 100%;
+      max-width: 100vw;
+      box-sizing: border-box;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 250px;
+      height: 100vh;
+      background: var(--bg-primary);
+      border-right: 1px solid rgba(184, 122, 59, 0.2);
+      z-index: 1000;
+      overflow-y: auto;
+      transition: var(--transition);
+      padding: 0;
+      margin: 0;
+    }
+
+    .sidebar-header {
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid rgba(184, 122, 59, 0.2);
+      background: var(--bg-accent);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .sidebar-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+      height: auto;
+      flex-shrink: 0;
+      transition: var(--transition);
+      text-decoration: none;
+      min-width: 0;
+      max-width: 200px;
+      margin: 0 auto;
+    }
+
+    .sidebar-logo:hover {
+      transform: scale(1.05);
+    }
+
+    .sidebar-logo img,
+    .sidebar-logo .logo-img {
+      height: 50px;
+      width: auto;
+      display: block;
+      filter: drop-shadow(0 0 8px rgba(217, 160, 91, 0.4));
+      transition: var(--transition);
+      object-fit: contain;
+      max-height: 45px;
+    }
+
+    .sidebar-logo:hover img,
+    .sidebar-logo:hover .logo-img {
+      filter: drop-shadow(0 0 15px rgba(217, 160, 91, 0.6));
+      transform: scale(1.1);
+    }
+
+    .sidebar-nav {
+      padding: 0.5rem 0;
+    }
+
+    .sidebar-menu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sidebar-menu li {
+      margin: 0;
+    }
+
+    .sidebar-menu li a {
+      display: flex;
+      align-items: center;
+      padding: 0.875rem 1.5rem;
+      color: var(--text-color);
+      text-decoration: none;
+      transition: var(--transition);
+      position: relative;
+      border-left: 3px solid transparent;
+    }
+
+    .sidebar-menu li a:hover,
+    .sidebar-menu li a.active {
+      background: var(--bg-accent);
+      color: var(--primary-color);
+      border-left-color: var(--primary-color);
+    }
+
+    .sidebar-menu li a i {
+      width: 24px;
+      font-size: 1.125rem;
+      margin-right: 0.75rem;
+    }
+
+    .sidebar-menu li a .badge {
+      margin-left: auto;
+      background: var(--danger);
+      color: var(--text-white);
+      padding: 0.25rem 0.5rem;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .main-content {
+      margin-left: 250px;
+      padding: 1rem 1.5rem;
+      min-height: 100vh;
+      background: var(--bg-secondary);
+      width: calc(100% - 250px);
+      max-width: calc(100vw - 250px);
+      box-sizing: border-box;
+      overflow-x: hidden;
+    }
+
+    .dashboard-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(184, 122, 59, 0.2);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .dashboard-header h1 {
+      margin: 0;
+      font-size: 1.75rem;
+      color: var(--text-color);
+      flex: 1;
+    }
+
+    .dashboard-header-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .dashboard-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.25rem;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+
+    .dashboard-btn-home {
+      background: var(--bg-accent);
+      color: var(--primary-color);
+      border: 1px solid rgba(184, 122, 59, 0.3);
+    }
+
+    .dashboard-btn-home:hover {
+      background: var(--primary-color);
+      color: var(--text-white);
+      border-color: var(--primary-color);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .dashboard-btn-logout {
+      background: var(--danger);
+      color: var(--text-white);
+      border: 1px solid var(--danger);
+    }
+
+    .dashboard-btn-logout:hover {
+      background: #c0392b;
+      border-color: #c0392b;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .dashboard-btn i {
+      font-size: 0.9rem;
+    }
+
+    .dashboard-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .stat-card {
+      background: var(--bg-primary);
+      padding: 1.5rem;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      border: 1px solid rgba(184, 122, 59, 0.1);
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .stat-card .stat-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--bg-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      color: var(--primary-color);
+      font-size: 1.5rem;
+    }
+
+    .stat-card h4 {
+      font-size: 2rem;
+      margin: 0;
+      color: var(--text-color);
+      font-weight: 700;
+    }
+
+    .stat-card p {
+      margin: 0.5rem 0 0 0;
+      color: var(--text-light);
+      font-size: 0.9rem;
+    }
+
+    .dashboard-section {
+      background: var(--bg-primary);
+      padding: 1.5rem;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 1.5rem;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: auto;
+    }
+
+    .dashboard-section h3 {
+      margin: 0 0 1rem 0;
+      font-size: 1.25rem;
+      color: var(--text-color);
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid rgba(184, 122, 59, 0.2);
+    }
+
+    .table {
+      width: 100%;
+      margin: 0;
+      max-width: 100%;
+      table-layout: auto;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      width: 100%;
+    }
+
+    .table thead th {
+      background: var(--bg-accent);
+      color: var(--text-color);
+      font-weight: 600;
+      padding: 0.75rem;
+      border-bottom: 2px solid rgba(184, 122, 59, 0.2);
+    }
+
+    .table tbody td {
+      padding: 0.75rem;
+      border-bottom: 1px solid rgba(184, 122, 59, 0.1);
+      color: var(--text-color);
+    }
+
+    .table tbody tr:hover {
+      background: var(--bg-accent);
+    }
+
+    @media (max-width: 992px) {
+      .sidebar {
+        left: -250px;
+      }
+
+      .sidebar.active {
+        left: 0;
+        box-shadow: var(--shadow-lg);
+      }
+
+      .main-content {
+        margin-left: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 1rem;
+        box-sizing: border-box;
+        overflow-x: hidden;
+      }
+
+      .sidebar-toggle {
+        display: block;
+        position: fixed;
+        top: 1rem;
+        left: 1rem;
+        z-index: 999;
+        background: var(--primary-color);
+        color: var(--text-white);
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+        box-shadow: var(--shadow-md);
+      }
+
+      .dashboard-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+      }
+
+      .dashboard-section {
+        padding: 1rem;
+        overflow-x: auto;
+      }
+
+      .table {
+        min-width: 600px;
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .table thead,
+      .table tbody {
+        display: table;
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .main-content {
+        padding: 0.75rem !important;
+      }
+
+      .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+      }
+
+      .dashboard-header h1 {
+        font-size: 1.5rem;
+        width: 100%;
+      }
+
+      .dashboard-header-actions {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .dashboard-stats {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+      }
+
+      .stat-card {
+        padding: 1.25rem;
+      }
+
+      .stat-card h4 {
+        font-size: 1.75rem;
+      }
+
+      .dashboard-section {
+        padding: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .dashboard-section h3 {
+        font-size: 1.125rem;
+      }
+
+      .table {
+        font-size: 0.875rem;
+      }
+
+      .table thead th,
+      .table tbody td {
+        padding: 0.5rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .main-content {
+        padding: 0.5rem !important;
+      }
+
+      .dashboard-header h1 {
+        font-size: 1.25rem;
+      }
+
+      .dashboard-header-actions {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .dashboard-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+      }
+
+      .stat-card {
+        padding: 1rem;
+      }
+
+      .stat-card h4 {
+        font-size: 1.5rem;
+      }
+
+      .stat-card .stat-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.25rem;
+      }
+
+      .dashboard-section {
+        padding: 0.75rem;
+      }
+
+      .table {
+        font-size: 0.8rem;
+        min-width: 500px;
+      }
+
+      .table thead th,
+      .table tbody td {
+        padding: 0.4rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <a href="../index.html" class="sidebar-logo">
+        <span class="logo-text">Prana<span class="logo-accent">Leaf</span></span>
+        <img src="https://www.pngitem.com/pimgs/m/333-3335536_ayurveda-icon-hd-png-download.png"
+          alt="PranaLeaf Ayurveda Logo" class="logo-img">
+      </a>
+    </div>
+    <nav class="sidebar-nav">
+      <ul class="sidebar-menu">
+        <li><a href="dashboard.html" class="active"><i class="fas fa-home"></i><span>Dashboard</span></a></li>
+        <li><a href="#appointments"><i class="fas fa-calendar-alt"></i><span>My Appointments</span></a></li>
+        <li><a href="#"><i class="fas fa-file-medical"></i><span>Medical Records</span></a></li>
+        <li><a href="#"><i class="fas fa-prescription"></i><span>Prescriptions</span></a></li>
+        <li><a href="#"><i class="fas fa-bell"></i><span>Notifications</span><span class="badge">3</span></a></li>
+        <li><a href="#"><i class="fas fa-cog"></i><span>Settings</span></a></li>
+        <li><a href="../index.html"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <div class="main-content">
+    <div class="dashboard-header">
+      <h1>Welcome Back, Patient!</h1>
+      <div class="dashboard-header-actions">
+        <a href="../index.html" class="dashboard-btn dashboard-btn-home">
+          <i class="fas fa-home"></i> Back to Home
+        </a>
+        <a href="../index.html" class="dashboard-btn dashboard-btn-logout">
+          <i class="fas fa-sign-out-alt"></i> Logout
+        </a>
+        <div class="theme-toggle-wrapper">
+          <button class="theme-toggle" aria-label="Toggle Dark Mode">
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="dashboard-stats">
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fas fa-calendar-check"></i></div>
+        <h4>5</h4>
+        <p>Upcoming Appointments</p>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fas fa-file-prescription"></i></div>
+        <h4>12</h4>
+        <p>Prescriptions</p>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fas fa-flask"></i></div>
+        <h4>8</h4>
+        <p>Lab Reports</p>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fas fa-user-md"></i></div>
+        <h4>3</h4>
+        <p>My Doctors</p>
+      </div>
+    </div>
+
+    <div class="dashboard-section" id="appointments">
+      <h3>Recent Appointments</h3>
+      <div class="table-wrapper">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Doctor</th>
+              <th>Department</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Jan 20, 2025</td>
+              <td>Dr. Meera Sharma</td>
+              <td>Ayurveda</td>
+              <td><span style="color:var(--success);">Confirmed</span></td>
+            </tr>
+            <tr>
+              <td>Jan 22, 2025</td>
+              <td>Dr. Raj Patel</td>
+              <td>Physiotherapy</td>
+              <td><span style="color:var(--warning);">Pending</span></td>
+            </tr>
+            <tr>
+              <td>Jan 25, 2025</td>
+              <td>Dr. Priya Kumar</td>
+              <td>Yoga Therapy</td>
+              <td><span style="color:var(--success);">Confirmed</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script>
+    // Sidebar toggle for mobile
+    if (window.innerWidth <= 992) {
+      const sidebarToggle = document.createElement('button');
+      sidebarToggle.className = 'sidebar-toggle';
+      sidebarToggle.innerHTML = '<i class="fas fa-bars"></i>';
+      sidebarToggle.addEventListener('click', function () {
+        document.querySelector('.sidebar').classList.toggle('active');
+      });
+      document.body.appendChild(sidebarToggle);
+    }
+
+    // Close sidebar when clicking outside on mobile
+    document.addEventListener('click', function (e) {
+      if (window.innerWidth <= 992) {
+        const sidebar = document.querySelector('.sidebar');
+        const sidebarToggle = document.querySelector('.sidebar-toggle');
+        if (sidebar && !sidebar.contains(e.target) && !sidebarToggle.contains(e.target)) {
+          sidebar.classList.remove('active');
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>

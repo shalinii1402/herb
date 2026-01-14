@@ -1,0 +1,345 @@
+/* ========================================
+   PranaLeaf Ayurveda Clinic - Dark Mode Stylesheet
+   Luxurious · Cinematic · High Contrast
+   ======================================== */
+
+/* Dark Mode Variables */
+body.dark-mode {
+  /* Primary Dark Tones */
+  --primary-color: #C48A55; /* Molten Bronze Glow */
+  --secondary-color: #E0A25A; /* Burnt Amber Edge */
+  --accent-color: #F0C27A; /* Candle Gold */
+  
+  /* Dark Backgrounds */
+  --bg-primary: #1A120D; /* Obsidian Brown */
+  --bg-secondary: #2C1E14; /* Dark Cocoa */
+  --bg-accent: #3C2A1F; /* Charred Umber */
+  --bg-glass: rgba(44, 30, 20, 0.6);
+  --bg-glass-hover: rgba(44, 30, 20, 0.8);
+  
+  /* Text Colors - High Visibility */
+  --text-color: #E7DCCD; /* Soft Sand */
+  --text-heading: #F7F2EA; /* Cream White */
+  --text-light: rgba(231, 220, 205, 0.8);
+  --text-lighter: rgba(231, 220, 205, 0.6);
+  --text-accent: #C69A67; /* Bronze Highlight */
+  --text-white: #FFFFFF;
+  
+  /* UI Elements */
+  --ui-button: #B87A3B; /* Buttons */
+  --ui-border: #CFA06A; /* Borders */
+  --ui-icon: #DDB482; /* Icons */
+  
+  /* Gold Accents - Luxury */
+  --sandalwood-gold: #E7B56B;
+  --royal-bronze: #AF7A4C;
+  --temple-copper: #995C38;
+  --gold-glow: rgba(196, 138, 85, 0.4);
+  --gold-light: #E0A25A;
+  --gold-dark: #C48A55;
+  
+  /* Shadows */
+  --shadow-color: rgba(0, 0, 0, 0.5);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.6);
+  --shadow-gold: 0 0 20px rgba(196, 138, 85, 0.4);
+  --shadow-gold-glow: 0 0 40px rgba(196, 138, 85, 0.6);
+  
+  /* Utility Colors */
+  --success: #C48A55;
+  --warning: #E0A25A;
+  --danger: #B87A3B;
+  --info: #C69A67;
+}
+
+/* ========== Dark Mode Body & Typography ========== */
+body.dark-mode {
+  background-color: var(--bg-primary);
+  color: var(--text-color);
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(196, 138, 85, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(224, 162, 90, 0.05) 0%, transparent 50%);
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+  color: var(--text-heading);
+}
+
+body.dark-mode p {
+  color: var(--text-color);
+}
+
+/* ========== Dark Mode Header ========== */
+body.dark-mode .header {
+  background: rgba(26, 18, 13, 0.95) !important;
+  border-bottom: 1px solid rgba(207, 160, 106, 0.2) !important;
+}
+
+body.dark-mode .nav-menu li a {
+  color: var(--text-color);
+}
+
+body.dark-mode .nav-menu li a:hover,
+body.dark-mode .nav-menu li a.active {
+  color: var(--primary-color);
+}
+
+body.dark-mode .nav-menu li a::after {
+  background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+}
+
+/* ========== Dark Mode Hero ========== */
+body.dark-mode .hero {
+  background: var(--bg-primary);
+  background-image: 
+    radial-gradient(ellipse at top, rgba(196, 138, 85, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at bottom, rgba(60, 42, 31, 0.3) 0%, transparent 50%);
+}
+
+body.dark-mode .hero h1 {
+  color: var(--primary-color);
+}
+
+body.dark-mode .hero h1::after {
+  background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+}
+
+body.dark-mode .hero p {
+  color: var(--text-color);
+}
+
+/* ========== Dark Mode Buttons ========== */
+body.dark-mode .btn-primary {
+  background: var(--ui-button) !important;
+  color: var(--text-white) !important;
+  border-color: var(--ui-button) !important;
+}
+
+body.dark-mode .btn-primary:hover {
+  background: var(--secondary-color) !important;
+  border-color: var(--secondary-color) !important;
+  box-shadow: 0 0 20px var(--gold-glow) !important;
+}
+
+body.dark-mode .btn-secondary {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+body.dark-mode .btn-secondary:hover {
+  background: var(--primary-color);
+  color: var(--bg-primary);
+}
+
+/* ========== Dark Mode Cards ========== */
+body.dark-mode .service-card,
+body.dark-mode .doctor-card,
+body.dark-mode .pricing-card,
+body.dark-mode .testimonial-card {
+  background: var(--bg-secondary);
+  border: 1px solid rgba(207, 160, 106, 0.2);
+}
+
+body.dark-mode .service-card:hover {
+  border-color: var(--primary-color) !important;
+  background: var(--bg-accent) !important;
+}
+
+body.dark-mode .service-icon {
+  background: rgba(196, 138, 85, 0.15);
+  border-color: rgba(196, 138, 85, 0.3);
+  color: var(--primary-color);
+}
+
+body.dark-mode .service-card:hover .service-icon {
+  background: rgba(196, 138, 85, 0.25);
+  color: var(--secondary-color);
+}
+
+/* ========== Dark Mode Footer ========== */
+body.dark-mode .footer {
+  background: var(--bg-primary) !important;
+  background-image: 
+    radial-gradient(ellipse at top, rgba(196, 138, 85, 0.05) 0%, transparent 50%),
+    linear-gradient(180deg, transparent 0%, rgba(44, 30, 20, 0.8) 100%);
+  border-top: 1px solid rgba(207, 160, 106, 0.2) !important;
+}
+
+body.dark-mode .footer::before {
+  background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+}
+
+body.dark-mode .footer-section p,
+body.dark-mode .footer-section a,
+body.dark-mode .footer-links a,
+body.dark-mode .footer-contact a {
+  color: var(--text-color) !important;
+}
+
+body.dark-mode .footer-section h3 {
+  color: var(--text-heading) !important;
+}
+
+body.dark-mode .footer-bottom {
+  border-top: 1px solid rgba(207, 160, 106, 0.2);
+  color: var(--text-light) !important;
+}
+
+body.dark-mode .footer-bottom::before {
+  color: var(--primary-color);
+}
+
+body.dark-mode .social-links a {
+  border-color: rgba(207, 160, 106, 0.3) !important;
+  color: var(--text-color) !important;
+}
+
+body.dark-mode .social-links a:hover {
+  border-color: var(--primary-color) !important;
+  color: var(--primary-color) !important;
+}
+
+/* ========== Dark Mode Forms ========== */
+body.dark-mode .form-control {
+  background: var(--bg-secondary);
+  border-color: rgba(207, 160, 106, 0.2);
+  color: var(--text-color);
+}
+
+body.dark-mode .form-control:focus {
+  border-color: var(--primary-color);
+  background: var(--bg-accent);
+}
+
+body.dark-mode .contact-form {
+  background: var(--bg-secondary);
+  border: 1px solid rgba(207, 160, 106, 0.2);
+}
+
+/* ========== Dark Mode Theme Toggle ========== */
+body.dark-mode .theme-toggle {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.95);
+}
+
+body.dark-mode .theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+  box-shadow: 0 0 15px var(--gold-glow);
+}
+
+/* ========== Dark Mode Section Titles ========== */
+body.dark-mode .section-subtitle {
+  color: var(--primary-color);
+}
+
+body.dark-mode .section-title h2::after {
+  background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+}
+
+/* ========== Dark Mode Preloader ========== */
+body.dark-mode .preloader {
+  background: var(--bg-primary);
+}
+
+body.dark-mode .spinner {
+  border-color: rgba(196, 138, 85, 0.2);
+  border-top-color: var(--primary-color);
+}
+
+/* ========== Dark Mode Back to Top ========== */
+body.dark-mode .back-to-top {
+  background: var(--primary-color);
+  color: var(--bg-primary);
+}
+
+body.dark-mode .back-to-top:hover {
+  background: var(--secondary-color);
+  box-shadow: 0 0 20px var(--gold-glow);
+}
+
+/* ========== Dark Mode Logo ========== */
+body.dark-mode .logo-img {
+  filter: drop-shadow(0 0 8px rgba(196, 138, 85, 0.5));
+}
+
+body.dark-mode .logo:hover .logo-img {
+  filter: drop-shadow(0 0 15px rgba(196, 138, 85, 0.7));
+}
+
+body.dark-mode .footer-logo-img {
+  filter: drop-shadow(0 0 8px rgba(196, 138, 85, 0.5));
+}
+
+/* ========== Dark Mode Smooth Transitions ========== */
+body.dark-mode,
+body.dark-mode .header,
+body.dark-mode .service-card,
+body.dark-mode .doctor-card,
+body.dark-mode .pricing-card,
+body.dark-mode .form-control,
+body.dark-mode .modal-content {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* ========== Dark Mode Scrollbar ========== */
+body.dark-mode ::-webkit-scrollbar {
+  width: 10px;
+  background: var(--bg-primary);
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 5px;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-color);
+}
+
+/* ========== Dark Mode Selection ========== */
+body.dark-mode ::selection {
+  background: var(--primary-color);
+  color: var(--bg-primary);
+}
+
+body.dark-mode ::-moz-selection {
+  background: var(--primary-color);
+  color: var(--bg-primary);
+}
+
+/* ========== Dark Mode Responsive ========== */
+@media (max-width: 992px) {
+  body.dark-mode .theme-toggle {
+    display: flex !important;
+  }
+}
+
+@media (max-width: 768px) {
+  body.dark-mode .theme-toggle {
+    top: 80px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    font-size: 1.25rem;
+    display: flex !important;
+  }
+}
+
+@media (max-width: 576px) {
+  body.dark-mode .theme-toggle {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+    right: 15px;
+    display: flex !important;
+  }
+}
