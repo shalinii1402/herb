@@ -40,8 +40,9 @@
 
   /* Navigation - Prevent overlap with logo */
   .navbar {
-    flex-wrap: wrap;
-    gap: 0.75rem;
+    flex-wrap: nowrap;
+    /* Prevent wrapping */
+    gap: 1rem;
   }
 
   .logo {
