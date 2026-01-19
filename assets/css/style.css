@@ -628,8 +628,9 @@ html::-webkit-scrollbar-thumb:hover {
   border-bottom: none !important;
   padding: 0 !important;
   margin: 0 !important;
-  line-height: 1;
+  line-height: normal;
   display: block;
+  min-height: 0;
 }
 
 .nav-menu li .dropdown-menu li a {
@@ -666,17 +667,17 @@ html::-webkit-scrollbar-thumb:hover {
 }
 
 /* Override Bootstrap dropdown defaults - remove all spacing */
-.nav-menu li .dropdown-menu > li:first-child {
+.nav-menu li .dropdown-menu>li:first-child {
   margin-top: 0 !important;
   padding-top: 0 !important;
 }
 
-.nav-menu li .dropdown-menu > li:last-child {
+.nav-menu li .dropdown-menu>li:last-child {
   margin-bottom: 0 !important;
   padding-bottom: 0 !important;
 }
 
-.nav-menu li .dropdown-menu > li + li {
+.nav-menu li .dropdown-menu>li+li {
   margin-top: 0 !important;
   padding-top: 0 !important;
 }
@@ -689,7 +690,7 @@ html::-webkit-scrollbar-thumb:hover {
 }
 
 .nav-menu li .dropdown-menu li a,
-.nav-menu li .dropdown-menu > li > a {
+.nav-menu li .dropdown-menu>li>a {
   padding: 0.35rem 0.875rem !important;
   margin: 0 !important;
   line-height: 1.3 !important;
