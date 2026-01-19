@@ -424,7 +424,7 @@ html::-webkit-scrollbar-thumb:hover {
   min-width: 0;
   max-width: 280px;
   gap: 0.75rem;
-  margin-right: 2rem;
+  margin-right: 1.5rem;
   margin-left: 0;
   padding-left: 0;
 }
@@ -477,11 +477,10 @@ html::-webkit-scrollbar-thumb:hover {
   align-items: center;
   list-style: none;
   margin: 0;
-  margin-left: auto;
   padding: 0;
   flex-wrap: nowrap;
-  flex: 0 1 auto;
-  justify-content: flex-end;
+  flex: 1;
+  justify-content: flex-start;
   min-width: 0;
   height: 100%;
 }
@@ -530,6 +529,11 @@ html::-webkit-scrollbar-thumb:hover {
   justify-content: center;
   height: auto;
   box-sizing: border-box;
+}
+
+/* Push buttons to the right - target li containing btn-secondary */
+.nav-menu li:has(> a.btn-secondary) {
+  margin-left: auto;
 }
 
 .nav-menu li a.btn i {
@@ -656,6 +660,7 @@ html::-webkit-scrollbar-thumb:hover {
   align-items: center;
   height: 100%;
   flex-shrink: 0;
+  margin-left: 0.5rem;
 }
 
 .nav-menu li.theme-toggle-wrapper .theme-toggle {
