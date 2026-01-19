@@ -656,7 +656,7 @@ html::-webkit-scrollbar-thumb:hover {
 
 .nav-menu li .dropdown-menu li a {
   display: block !important;
-  padding: 6px 10px !important;
+  padding: 6px 8px !important;
   margin: 0 !important;
   color: var(--text-color);
   white-space: nowrap;
