@@ -20,6 +20,16 @@
   .hero h1 {
     font-size: 3rem;
   }
+
+  /* Compact Navbar for smaller laptops */
+  .nav-menu li a {
+    padding: 0 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .nav-menu {
+    gap: 0.25rem;
+  }
 }
 
 /* ========== Tablet Standard (Landscape 1024px) ========== */
@@ -177,6 +187,16 @@
     padding-left: 0;
     background: transparent;
     color: var(--primary-color);
+  }
+
+  /* Reset padding/gap for mobile menu in this range since it's vertical */
+  .nav-menu {
+    gap: 0 !important;
+  }
+
+  .nav-menu li a {
+    padding: 1rem 0;
+    font-size: 1rem;
   }
 
   .hero-buttons .hero-cta-btn {
