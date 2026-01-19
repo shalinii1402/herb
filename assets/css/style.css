@@ -603,7 +603,7 @@ html::-webkit-scrollbar-thumb:hover {
   border-radius: var(--radius-sm);
   box-shadow: var(--shadow-lg);
   min-width: 180px;
-  padding: 0.25rem 0;
+  padding: 0.125rem 0;
   margin-top: 0.5rem;
   opacity: 0;
   visibility: hidden;
@@ -631,12 +631,14 @@ html::-webkit-scrollbar-thumb:hover {
 
 .nav-menu li .dropdown-menu li a {
   display: block;
-  padding: 0.5rem 1rem;
+  padding: 0.4rem 0.875rem;
   color: var(--text-color);
   white-space: nowrap;
   transition: var(--transition);
   border-bottom: none;
   text-decoration: none;
+  line-height: 1.4;
+  font-size: 0.9rem;
 }
 
 .nav-menu li .dropdown-menu li a:hover {
@@ -647,7 +649,7 @@ html::-webkit-scrollbar-thumb:hover {
 .nav-menu li .dropdown-menu li a.active {
   background: var(--bg-accent);
   color: var(--primary-color);
-  padding-left: 1.5rem;
+  padding-left: 1.125rem;
 }
 
 .nav-menu li .dropdown-menu li a::after {
