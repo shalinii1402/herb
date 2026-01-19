@@ -655,20 +655,19 @@ html::-webkit-scrollbar-thumb:hover {
 }
 
 .nav-menu li .dropdown-menu li a {
-  display: block;
-  padding: 4px 16px !important;
-  /* Standard compact padding */
+  display: block !important;
+  padding: 6px 16px !important;
   margin: 0 !important;
   color: var(--text-color);
   white-space: nowrap;
   transition: var(--transition);
   border-bottom: none !important;
   text-decoration: none !important;
-  line-height: 1.5 !important;
-  /* Standard line-height */
+  line-height: 1.2 !important;
+  /* Tight line height */
   font-size: 0.9rem;
-  height: auto;
-  min-height: auto;
+  height: auto !important;
+  min-height: 0 !important;
 }
 
 .nav-menu li .dropdown-menu li a:hover {
