@@ -2008,6 +2008,12 @@ textarea.form-control {
 
 /* ========== Dropdown Spacing Fix (Override Inherited Styles) ========== */
 /* Reset inherited display:flex and height:100% from .nav-menu li */
+.nav-menu li .dropdown-menu {
+  min-width: auto !important;
+  width: max-content !important;
+  padding: 0.5rem 0 !important;
+}
+
 .nav-menu li .dropdown-menu li {
   display: block !important;
   height: auto !important;
@@ -2019,8 +2025,8 @@ textarea.form-control {
 .nav-menu li .dropdown-menu li a {
   display: block !important;
   height: auto !important;
-  padding: 6px 16px !important;
-  /* Compact padding */
+  padding: 6px 8px 6px 16px !important;
+  /* Asymmetric padding: Right reduced */
   margin: 0 !important;
   line-height: normal !important;
   font-size: 0.9rem !important;
