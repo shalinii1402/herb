@@ -545,6 +545,11 @@ html::-webkit-scrollbar-thumb:hover {
   box-sizing: border-box;
 }
 
+/* Specific spacing for Dashboard button */
+.nav-menu li a.btn-secondary {
+  margin-right: 0.75rem;
+}
+
 /* Push buttons to the right - target li containing btn-secondary */
 .nav-menu li:has(> a.btn-secondary) {
   margin-left: auto;
