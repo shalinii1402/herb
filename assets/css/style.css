@@ -425,12 +425,15 @@ html::-webkit-scrollbar-thumb:hover {
   max-width: 300px;
   gap: 0.75rem;
   margin-right: auto;
+  align-self: center;
 }
 
 .logo-img {
   max-height: 40px;
+  height: 40px;
   width: auto;
   display: block;
+  object-fit: contain;
   /* Ensure no inline-block spacing */
 }
 
@@ -445,7 +448,7 @@ html::-webkit-scrollbar-thumb:hover {
   align-items: center;
   /* vertical center text itself if needed */
   height: 100%;
-  margin-top: 2px;
+  margin-top: 0;
   /* Optical adjustment */
 }
 
@@ -457,8 +460,9 @@ html::-webkit-scrollbar-thumb:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 0;
-  min-height: 60px;
+  padding: 0.75rem 0;
+  min-height: 70px;
+  height: 70px;
   gap: 0.5rem;
   width: 100%;
   position: relative;
@@ -475,6 +479,8 @@ html::-webkit-scrollbar-thumb:hover {
   flex: 1;
   justify-content: flex-end;
   min-width: 0;
+  height: 100%;
+  align-self: center;
 }
 
 /* Remove any default spacing from nav-menu */
@@ -488,6 +494,7 @@ html::-webkit-scrollbar-thumb:hover {
   display: flex;
   align-items: center;
   flex-shrink: 0;
+  height: 100%;
 }
 
 .nav-menu li a {
@@ -503,6 +510,8 @@ html::-webkit-scrollbar-thumb:hover {
   font-family: var(--font-secondary);
   letter-spacing: 0.3px;
   font-size: 0.9rem;
+  height: 100%;
+  box-sizing: border-box;
 }
 
 .nav-menu li a.btn {
@@ -513,6 +522,8 @@ html::-webkit-scrollbar-thumb:hover {
   align-items: center;
   gap: 0.5rem;
   justify-content: center;
+  height: auto;
+  box-sizing: border-box;
 }
 
 .nav-menu li a.btn i {
@@ -549,6 +560,7 @@ html::-webkit-scrollbar-thumb:hover {
 .nav-menu li.dropdown {
   position: relative;
   z-index: 1001;
+  height: 100%;
 }
 
 .nav-menu li.dropdown>a {
@@ -581,7 +593,7 @@ html::-webkit-scrollbar-thumb:hover {
   border-radius: var(--radius-sm);
   box-shadow: var(--shadow-lg);
   min-width: 180px;
-  padding: 0.5rem 0;
+  padding: 0.25rem 0;
   margin-top: 0.5rem;
   opacity: 0;
   visibility: hidden;
@@ -609,7 +621,7 @@ html::-webkit-scrollbar-thumb:hover {
 
 .nav-menu li .dropdown-menu li a {
   display: block;
-  padding: 0.75rem 1.25rem;
+  padding: 0.5rem 1rem;
   color: var(--text-color);
   white-space: nowrap;
   transition: var(--transition);
@@ -630,6 +642,35 @@ html::-webkit-scrollbar-thumb:hover {
 
 .nav-menu li .dropdown-menu li a::after {
   display: none;
+}
+
+/* Theme Toggle Wrapper */
+.nav-menu li.theme-toggle-wrapper {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  flex-shrink: 0;
+}
+
+.nav-menu li.theme-toggle-wrapper .theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.95);
+  cursor: pointer;
+  transition: var(--transition);
+  padding: 0;
+  margin: 0;
+}
+
+.nav-menu li.theme-toggle-wrapper .theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 .nav-toggle {
