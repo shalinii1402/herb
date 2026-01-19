@@ -2005,3 +2005,30 @@ textarea.form-control {
   font-style: italic;
   letter-spacing: 1px;
 }
+
+/* ========== Dropdown Spacing Fix (Override Inherited Styles) ========== */
+/* Reset inherited display:flex and height:100% from .nav-menu li */
+.nav-menu li .dropdown-menu li {
+  display: block !important;
+  height: auto !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+}
+
+.nav-menu li .dropdown-menu li a {
+  display: block !important;
+  height: auto !important;
+  padding: 6px 16px !important;
+  /* Compact padding */
+  margin: 0 !important;
+  line-height: normal !important;
+  font-size: 0.9rem !important;
+  color: var(--text-color) !important;
+  white-space: nowrap !important;
+}
+
+.nav-menu li .dropdown-menu li a:hover {
+  background: var(--bg-accent) !important;
+  color: var(--primary-color) !important;
+}
